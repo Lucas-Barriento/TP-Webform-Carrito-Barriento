@@ -35,3 +35,26 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+img.card-img-top {
+    width: 75% !important
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+svg.bi.bi-cart {
+    width: 30px;
+    height: 30px;
+    color: black;
+}
+button {
+    border: none;
+    width: 100px;
+}
+a{
+    text-decoration: none;
+}
+
