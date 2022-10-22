@@ -31,7 +31,7 @@
         <h5 class="card-title"> <%:art.Nombre %></h5>
         <p class="card-text"><%:art.Descripcion %></p>
         <p class="card-text">$<%:art.Precio %></p>
-        <a href="Default.aspx?id=<%:art.Id%>">Agregar</a>
+          <button><a href="Default.aspx?id=<%:art.Id%>">Agregar</a></button>
       </div>
     </div>
   </div>

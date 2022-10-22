@@ -34,6 +34,7 @@ namespace TPWebformCarrito_BARRIENTO
                      if (art.Id == idSeleccionado)
                     {
                         art.Cantidad++;
+                        
                         existente = true;
                         //envia cambios a session
                         Session.Add("ArticulosEnCarrito", ListaCarrito);
