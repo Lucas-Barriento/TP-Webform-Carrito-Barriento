@@ -34,11 +34,13 @@ namespace TPWebformCarrito_BARRIENTO
                 idSeleccionado = int.Parse(Request.QueryString["idQuitar"]);
                 ListaCarrito = CarritoSession();
                 Session.Add("ArticulosEnCarrito",(ListaCarrito.FindAll(x => x.Id != idSeleccionado)));
+                Response.Redirect("Default.aspx", false);
             }
             else if (Request.QueryString["vaciarCarrito"] != null)
             {
                 ListaCarrito.Clear();
                 Session.Add("ArticulosEnCarrito",null);
+                Response.Redirect("Default.aspx", false);
             }   
             
         }
@@ -47,8 +49,5 @@ namespace TPWebformCarrito_BARRIENTO
             List<ArticuloCarrito> Carrito = Session["ArticulosEnCarrito"] != null ? (List<ArticuloCarrito>)(Session["ArticulosEnCarrito"]) : new List<ArticuloCarrito>();
             return Carrito;
         }
-
-        
-
     }
 }

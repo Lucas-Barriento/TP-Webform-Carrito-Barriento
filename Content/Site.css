@@ -11,7 +11,7 @@ body {
     padding-right: 15px;
 }
 
- Set widths on the form inputs since otherwise they're 100% wide 
+ Set widths on the form inputs since otherwise theyre 100% wide 
 input,
 select,
 textarea {
@@ -44,29 +44,77 @@ img.card-img-top {
 .card {
     display: flex;
     align-items: center;
+    background-color: #fbfbfb !important;
+}
+input#MainContent_txtBoxBuscar {
+    background-color: #fbfbfb !important;
 }
 
 svg.bi.bi-cart {
-    width: 30px;
-    height: 30px;
+    width: 57px;
+    height: 33px;
     color: black;
+    background-color: burlywood;
+    padding: 4px;
+    border-radius: 9px;
+    border: 1px solid;
 }
 button {
-    border: none;
-    width: 100px;
+    border-radius: 10px !important;
+    background-color:black;
 }
-a{
-    text-decoration: none;
-}
-
-.row.row-cols-1.row-cols-md-3.g-4 {
-    display: flex;
-    flex-direction: column !important;
+a {
+    color: #fbfbfb !important;
+    text-decoration: none !important;
 }
 
 .contImg {
     width: 40% !important;
+    height: 30% !important;
 }
 a{
     text-decoration:none;
+}
+.offcanvas-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cardCarrito {
+    display: flex;
+    flex-direction: row;
+    background-color: #fbfbfb !important;
+}
+#colCarrito {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom:2px !important;
+}
+form#ctl01 {
+    background-color: aliceblue !important;
+}
+input#MainContent_txtBoxBuscar {
+    margin: 12px;
+    margin-left: 0;
+}
+.offcanvas-header, .offcanvas-body {
+    background-color: aliceblue;
+}
+button:hover {
+    transform: scale(1.2, 1.2);
+    transition: .1s linear;
+}
+.txtCarritoVacio {
+    align-self: center;
+    font-size: xx-large;
+    font-family: fantasy;
 }

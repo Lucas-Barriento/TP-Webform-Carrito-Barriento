@@ -43,41 +43,47 @@
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                 </svg>
         </div>
-
+        <%-- Carrito --%>
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito</h5>
+    <h5 class="offcanvas-title"  id="offcanvasWithBothOptionsLabel">Carrito</h5>
+    <button <% if (TotalCarrito()==0){%>hidden<%}%> ><a href="Default.aspx?vaciarCarrito=1">Vaciar</a></button>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-      <%-- aca van los productos --%>
-      <div cssclass="row row-cols-1 row-cols-md-3 g-4">
-   <% foreach (var art in CarritoSession())
-              {  %> 
-  <div cssclass="col">   
-    <div cssclass="card">
-        <div class="contImg"><img src="<%:art.ImagenUrl %>" class="card-img-top" alt="..."></div>
-      <div class="card-body">
-        <h5 class="card-title"> <%:art.Nombre %></h5>
-        <p class="card-text"><%:art.Descripcion %></p>
-        <p class="card-text">Cantidad: <%:art.Cantidad%></p>
-        <p class="card-text"> Total: $<%:art.Precio*art.Cantidad%></p>
-        <button><a href="Default.aspx?idQuitar=<%:art.Id%>">Quitar</a></button> 
-      </div>
+    <%-- aca van los productos --%>
+    <%if (TotalCarrito()==0){%>
+    <p class="txtCarritoVacio">Carrito vacio</p>
+    <%}else {%>
+    <div class="offcanvas-body">
+        <div cssclass="row row-cols-1 row-cols-md-3 g-4">
+            <% foreach (var art in CarritoSession())
+              { %>
+            <div cssclass="col" id="colCarrito">
+                <div cssclass="card" id="cardCarrito">
+                    <div class="contImg">
+                        <img src="<%:art.ImagenUrl %>" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%:art.Nombre %></h5>
+                        <p class="card-text">Cantidad: <%:art.Cantidad%></p>
+                        <p class="card-text">Total: $<%:(art.Precio*art.Cantidad).ToString("N2")%></p>
+                        <button><a href="Default.aspx?idQuitar=<%:art.Id%>">Quitar</a></button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
     </div>
-  </div>
-         <% }  %>   
-</div>
-      <button><a href="Default.aspx?vaciarCarrito=1">Vaciar carrito</a></button>
-      <p>Total:<%:TotalCarrito()%> </p>
-  </div>
+    <% }  %>
+    <div class="offcanvas-footer">
+      <p>Total: <%:TotalCarrito().ToString("N2")%> </p>
+      </div>
 </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <%--<p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>--%>
+                <p>&copy; <%: DateTime.Now.Year %> - TP Web</p>
 
             </footer>
             <link href="Content/Site.css" rel="stylesheet" />
@@ -90,7 +96,6 @@
 
   </script>
         </div>
-
     </form>
 </body>
 </html>

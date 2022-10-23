@@ -3,6 +3,7 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
@@ -58,7 +59,6 @@ namespace TPWebformCarrito_BARRIENTO
 
                 }
             }   
-
         }
 
         //se fija si en session ya hay una lista de art y si no, le asigna una vacia
@@ -67,6 +67,21 @@ namespace TPWebformCarrito_BARRIENTO
             List<ArticuloCarrito> Carrito = Session["ArticulosEnCarrito"] != null ? (List<ArticuloCarrito>)(Session["ArticulosEnCarrito"]) : new List<ArticuloCarrito>();
             return Carrito;
         }
+        
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtBoxBuscar.Text;
+            if (filtro.Length > 0)
+            {
+                filtro = filtro.ToUpper();
 
+                listaFiltrada = ListaArticulo.FindAll(x => x.Codigo.ToUpper().Contains(filtro) ||
+                                                           x.Nombre.ToUpper().Contains(filtro) ||
+                                                           x.marca.Descripcion.ToUpper().Contains(filtro) ||
+                                                           x.categoria.Descripcion.ToUpper().Contains(filtro));
+                ListaArticulo = listaFiltrada;
+            }
+        }
     }
 }
