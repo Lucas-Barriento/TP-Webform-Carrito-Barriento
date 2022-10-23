@@ -61,7 +61,7 @@
             <div cssclass="col" id="colCarrito">
                 <div cssclass="card" id="cardCarrito">
                     <div class="contImg">
-                        <img src="<%:art.ImagenUrl %>" class="card-img-top" alt="..."></div>
+                        <img src="<%:art.ImagenUrl %>" class="card-img-top" alt="No disponible"></div>
                     <div class="card-body">
                         <h5 class="card-title"><%:art.Nombre %></h5>
                         <p class="card-text">Cantidad: <%:art.Cantidad%></p>
