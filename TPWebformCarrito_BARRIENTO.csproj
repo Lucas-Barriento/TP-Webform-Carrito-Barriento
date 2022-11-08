@@ -319,20 +319,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\source\repos\tp-winform-Barriento-Lapena\Dominio\Dominio.csproj">
-      <Project>{378172a0-bcab-4e34-a2b5-8236353fd446}</Project>
-      <Name>Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\source\repos\tp-winform-Barriento-Lapena\Negocio\Negocio.csproj">
-      <Project>{b6a2a781-fa36-4121-a975-06ec8b890399}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Dominio\Dominio.csproj">
+      <Project>{378172a0-bcab-4e34-a2b5-8236353fd446}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="Negocio\Negocio.csproj">
+      <Project>{b6a2a781-fa36-4121-a975-06ec8b890399}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWebformCarrito_BARRIENTO", "TPWebformCarrito_BARRIENTO.csproj", "{F41D3AC4-752E-4B3F-B8C6-F9B6064ECE72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "..\..\source\repos\tp-winform-Barriento-Lapena\Dominio\Dominio.csproj", "{378172A0-BCAB-4E34-A2B5-8236353FD446}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{378172A0-BCAB-4E34-A2B5-8236353FD446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "..\..\source\repos\tp-winform-Barriento-Lapena\Negocio\Negocio.csproj", "{B6A2A781-FA36-4121-A975-06EC8B890399}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{B6A2A781-FA36-4121-A975-06EC8B890399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
